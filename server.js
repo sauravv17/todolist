@@ -2,7 +2,7 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
-  Task = require('./api/models/todoListModel'),
+  Task = require('./api/models/todolistModel'),
   bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-var routes = require('./api/routes/todoListRoutes');
+var routes = require('./api/routes/todolistRoutes');
 routes(app);
 
 app.use(function(req, res) {
